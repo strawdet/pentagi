@@ -64,6 +64,12 @@ services:
       - ./logs:/app/logs
     networks:
       - pentagi-network
+    # Limit resource usage on my local dev machine
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
 
   # Frontend web interface
   frontend:
